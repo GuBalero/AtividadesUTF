@@ -9,7 +9,7 @@ void main(){
     printf("%c", conceito);
 }
 
-char converter(int nota, char * conceito){
+void converter(int nota, char * conceito){
     char c;
 
     if(nota >= 9)
