@@ -10,7 +10,7 @@ void main(){
 
 }
 
-int inverso(int n, int * inversa){
+void inverso(int n, int * inversa){
     int unidade, dezena, centena, r;
 
     if(n < 1000){
