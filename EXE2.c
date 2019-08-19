@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int inverso(int n, int * inversa);
+
+void main(){
+    
+    int n = 321, inversa;
+    inverso(n, &inversa);
+    printf("%d", inversa);
+
+}
+
+int inverso(int n, int * inversa){
+    int unidade, dezena, centena, r;
+
+    if(n < 1000){
+        centena = n/100;
+        n -= centena*100;
+
+        dezena = n/10;
+        n -= dezena*10;
+
+        unidade = n;
+
+        r = (unidade*100)+(dezena*10)+centena;
+        *inversa = r;        
+    }
+}
