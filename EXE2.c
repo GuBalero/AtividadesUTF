@@ -3,8 +3,8 @@
 int inverso(int n, int * inversa);
 
 void main(){
-    
-    int n = 321, inversa;
+
+    int n = 927, inversa;
     inverso(n, &inversa);
     printf("%d", inversa);
 
