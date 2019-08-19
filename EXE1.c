@@ -10,7 +10,7 @@ void main(){
 
 }
 
-int potencia(int base, int expoente, int * res){
+void potencia(int base, int expoente, int * res){
     int r=base;
     
     for(int i = expoente-1; i>0; i--){
