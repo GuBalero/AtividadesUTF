@@ -4,7 +4,7 @@
 void sacar(float valor, int * notas);
 
 void main(){
-    float valor=9;
+    float valor=27;
     int notas[N]; //NOTAS NO VETOR: 0 = 100; 1 = 50; 2 = 20; 3 = 10; 4 = 5; 5 = 2;
     sacar(valor, notas);
 }
