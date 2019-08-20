@@ -5,7 +5,7 @@ void traduzir(int dia, int mes, int ano, char * ex);
 
 void main(){
 
-    int dia=17, mes=8, ano=2019;
+    int dia=12, mes=12, ano=2019;
     char extenso [50];
 
     traduzir(dia, mes, ano, extenso);
