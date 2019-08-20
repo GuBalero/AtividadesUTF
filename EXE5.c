@@ -6,7 +6,7 @@ int contNota(int valor, int nota);
 void mostrarNotas(int* notas);
 
 void main(){
-    int valor=276;
+    int valor=101;
     int notas[N]; //NOTAS NO VETOR: 0 = 100; 1 = 50; 2 = 20; 3 = 10; 4 = 5; 5 = 2;
     
     sacar(valor, notas);
@@ -27,7 +27,7 @@ void sacar(int valor, int* notas){
 }
 
 int contNota(int valor, int nota){
-    if((valor == 11 || valor == 13) && nota == 5) return 1;
+    if((valor == 11 || valor == 13 || valor == 7 || valor == 9) && nota == 5) return 1;
 
     if(valor % nota == 1 || valor % nota == 3) return (valor/nota)-1;
 
