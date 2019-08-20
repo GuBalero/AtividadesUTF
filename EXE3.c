@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char converter(int nota, char * conceito);
+void converter(int nota, char * conceito);
 
 void main(){
     int nota=9.1;

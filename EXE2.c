@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int inverso(int n, int * inversa);
+void inverso(int n, int * inversa);
 
 void main(){
 

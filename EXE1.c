@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int potencia(int base, int expoente, int * res);
+void potencia(int base, int expoente, int * res);
 
 void main(){
 
