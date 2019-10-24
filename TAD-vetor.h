@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
+#include <string.h>
 #define LENGTH 5
 
 typedef struct{
@@ -44,36 +45,35 @@ void vetor_free(Vetor* v){
 }
 
 void vetor_print(Vetor * m){
-    for (int i = 0; i < m->size; i++){
-        printf("%d\t", m->vetor[i]);
+    for (int i = 0; i < m->length; i++){
+        //if(m->vetor[i] != INT_MAX) 
+            printf("%d\t", m->vetor[i]);
     }   
+    printf("\n");
 }
 
 void vetor_expand(Vetor* v){
     v->length *= 2;
-    v->vetor = (int*) calloc(v->length, sizeof(int));
-
-     for (int i = v->size; i < v->length; i++){
-        v->vetor[i] = INT_MAX;
+    
+    int* temp = (int*) calloc(v->length, sizeof(int));
+    for(int i=0; i<v->size; i++){
+        temp[i] = v->vetor[i];
     }
+    free(v->vetor);
+    v->vetor = temp;
+
 }
 
 Boolean vetor_insert(Vetor* v, DataType element, int index){
-    if(v->size < v->length){
        
-        if(v->vetor[index] == INT_MAX){
-            printf("Posição ocupada\n");
-            return False;
-        }else{
-            v->vetor[index] = element;
-            v->size++;
-            return True;
-        }
-
-    }else{
-        printf("Vetor cheio\n");
-        vetor_expand(v);
+    if(v->vetor[index] != INT_MAX){
         return False;
+    }else{
+        v->vetor[index] = element;
+        v->size++;
+        if(v->size == v->length) vetor_expand(v);
+        return True;
     }
+
 
 }

@@ -11,21 +11,21 @@ typedef struct{
 void print (void * v, int nElementos, int tamElemento){
     
     if(tamElemento == sizeof(int)){
-        int * vetor = v;
+        int * vetor = (int*)v;
         for(int i=0; i<nElementos; i++){
             printf("%d\t", vetor[i]);
         }
         printf("\n");
     
     }else if(tamElemento == sizeof(char)){
-        char * vetor = v;
+        char * vetor = (char*) v;
         for(int i=0; i<nElementos; i++){
             printf("%c\t", vetor[i]);
         }
         printf("\n");
     
     }else if(tamElemento == sizeof(Produto)){
-        Produto * vetor = v;
+        Produto * vetor = (Produto*) v;
         for(int i=0; i<nElementos; i++){
            printf("%.2f\t", (vetor+i)->preco);
         }
@@ -95,6 +95,7 @@ void troca_generico(void* a, void* b, int tamElemento){
     memcpy(a, b, tamElemento);
     memcpy(b, temp, tamElemento);
     free(temp);
+    
 }
 
 void bubble_generico(void* v, int n, int tamElemento, int (*funcao)(void* a, void* b)){
