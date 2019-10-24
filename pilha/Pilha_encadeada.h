@@ -95,11 +95,15 @@ No* no_criar(Tipo dado){
  */
 Tipo* pilha_pop1(Pilha* p){
     No* aux = p->topo;
+
     p->topo = aux->prox;
-    aux->prox = NULL;
     p->qtde--;
 
-    return &aux->dado;
+    Tipo* elemento = (Tipo*) malloc(sizeof(Tipo));
+    elemento = &(aux->dado);
+    free(aux);
+
+    return elemento;
 };
 
 /**
@@ -111,10 +115,14 @@ Tipo* pilha_pop1(Pilha* p){
  */
 Boolean pilha_pop2(Pilha* p, Tipo* end){
     No* aux = p->topo;
+
     p->topo = aux->prox;
-    aux->prox = NULL;
-    end = &aux->dado;
     p->qtde--;
+
+    Tipo* elemento = (Tipo*) malloc(sizeof(Tipo));
+    elemento = &(aux->dado);
+    end = elemento;
+    free(aux);
   
     return true;
 };
