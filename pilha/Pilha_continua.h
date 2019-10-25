@@ -67,7 +67,9 @@ int pilha_tamanho(Pilha* p){
     return p->qtde;
 };
 //FUNÇÕES ADICIONAIS
-int pilha_pushAll(Pilha* p, Tipo* vetor, int tam);
+int pilha_pushAll(Pilha* p, Tipo* vetor, int tam){
+    
+};
 
 Pilha* pilha_inverter(Pilha* p);
 
